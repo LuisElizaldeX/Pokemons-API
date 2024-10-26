@@ -34,6 +34,5 @@ const errorSchema = new mongoose.Schema({
 module.exports = {
     usuarioSchema, 
     pokemonSchema,
-    photoSchema,
     errorSchema
 }

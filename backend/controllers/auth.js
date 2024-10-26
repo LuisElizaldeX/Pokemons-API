@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { generarJWT } = require('../helpers/generar-jwt');
 const {usuarioSchema} = require('../schemas/schemas');
 
-
 // Creación de Modelo
 const Usuario = mongoose.model('Usuarios',usuarioSchema);
 
@@ -16,7 +15,7 @@ const login = (async(req, res = response)=>{
     try{
         const {correo, password} = req.body;
         const usuario = await Usuario.findOne({correo, password});
-        console.log(`\nEl usuario ${correo} se está intentando loguear...`);
+        console.log(`\nEl usuario ${correo} con password ${password} se está intentando loguear...`);
         if(usuario){
             console.log(`Login correcto.`);
             //Se genera un JWT con el ID del usuario creado
